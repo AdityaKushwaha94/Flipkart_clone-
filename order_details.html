@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="orderdetail.css">
+</head>
+<body>
+    <div class="order-details-container">
+        <h1>Order Details</h1>
+        <form method="post" action="order_details.php">
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit" name="submit">Fetch Order</button>
+        </form>
+        <?php include 'order_table.php'; ?>
+    </div>
+</body>
+</html>

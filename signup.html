@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <!-- Include Bootstrap CSS and other styles/scripts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="signup_style.css">
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="login.js"></script>
+</head>
+
+<body>
+    <form action="register.php" method="post" class="container">
+        <div class="box">
+            <div class="row">
+                <div class="col-sm-5 col-xs-1 box1">
+                    <div class="inline-text">
+                        <h1>Sign Up</h1>
+                        <p>Register to get started</p>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-xs-1 box2">
+                    <div class="user-id user-data">
+                        <input type="text" name="username" id="username" required>
+                        <label>Enter Username</label>
+                    </div>
+                    <div class="user-id user-data">
+                        <input type="email" name="email" id="email" required>
+                        <label>Enter Email Address</label>
+                    </div>
+                    <div class="user-id user-data">
+                        <input type="password" name="password" id="password" required>
+                        <label>Enter Password</label>
+                    </div>
+                    <div class="user-id button">
+                        <input type="submit" value="Register">
+                    </div>
+                    <div class="user-id button">
+                        <a href="login.html">
+                            <input type="button" value="Existing User? Log in">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

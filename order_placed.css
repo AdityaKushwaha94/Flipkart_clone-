@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2874f0; /* Flipkart primary color */
+}
+
+.order-placed-container {
+    text-align: center;
+    color: #fff;
+}
+
+.order-placed-message {
+    padding: 30px;
+    background-color: #ffc107; /* Yellow background */
+    background-image: linear-gradient(to bottom right, #ff5722, #ffc107); /* Gradient from orange to yellow */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Box shadow for depth */
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.order-placed-message h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #1565c0; /* Dark blue heading */
+}
+
+.order-placed-message p {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #fff; /* White text */
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+.shop-more-button, .order-details-button {
+    display: inline-block;
+    padding: 14px 32px;
+    margin: 0 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1565c0; /* Dark blue button */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.shop-more-button:hover, .order-details-button:hover {
+    background-color: #1976d2; /* Lighter blue on hover */
+    transform: translateY(-2px); /* Button lift effect on hover */
+}
+
+/* Keyframe animation for fadeInUp effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fountain-like animation effect */
+.order-placed-container:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff; /* White droplets */
+    animation: fountainAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes fountainAnimation {
+    0% {
+        transform: translate(-50%, 0) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -200px) scale(1);
+        opacity: 0;
+    }
+}

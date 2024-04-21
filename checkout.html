@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="card">
+            <div class="common-heading">
+                <div class="common-heading-left">
+                    <h1>Checkout</h1>
+                </div>
+            </div>
+            <div class="checkout-details">
+                <form id="productForm" action="checkout.php" method="post">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" readonly><br><br>
+
+                    <label for="quantity">Quantity:</label>
+                    <div class="quantity-input">
+                        <button type="button" onclick="decrementQuantity()">-</button>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+                        <button type="button" onclick="incrementQuantity()">+</button>
+                    </div><br><br>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required><br><br>
+
+                    <label for="phone">Phone No.:</label>
+                    <input type="tel" id="phone" name="phone" required><br><br>
+
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="orderedTime">Ordered Time:</label>
+                    <input type="text" id="orderedTime" name="orderedTime" readonly><br><br>
+
+                    <label for="deliveryDate">Delivery Date:</label>
+                    <input type="text" id="deliveryDate" name="deliveryDate" readonly><br><br>
+
+                    <button type="submit">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateProductName() {
+            const productId = document.getElementById('productId').value;
+            let productName;
+
+            switch (productId) {
+                case '1':
+                    productName = 'Realme C53';
+                    break;
+                case '2':
+                    productName = 'iPhone 15 Pro';
+                    break;
+                case '3':
+                    productName = 'iPhone 15 Pro Max';
+                    break;
+                case '4':
+                    productName = 'Samsung S21';
+                    break;
+                default:
+                    productName = ''; // Default value if no match
+                    break;
+            }
+
+            document.getElementById('productName').value = productName;
+        }
+
+        function incrementQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        }
+
+        function decrementQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        }
+
+        // Set the selected product from URL parameter
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productName = urlParams.get('productName');
+
+            if (productName) {
+                document.getElementById('productName').value = productName;
+            }
+
+            // Set ordered time
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-IN', { hour: 'numeric', minute: 'numeric', hour12: true });
+            document.getElementById('orderedTime').value = formattedTime;
+
+            // Set delivery date
+            const deliveryDate = new Date();
+            deliveryDate.setDate(deliveryDate.getDate() + 7); // Add 7 days
+            const formattedDeliveryDate = deliveryDate.toLocaleDateString('en-IN');
+            document.getElementById('deliveryDate').value = formattedDeliveryDate;
+        };
+    </script>
+
+</body>
+
+</html>

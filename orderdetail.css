@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.order-details-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #1565c0;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1565c0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1976d2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1565c0;
+    color: #fff;
+}
+/* Existing styles remain unchanged */
+
+/* Style for table header */
+table th {
+    background-color: #1565c0;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Style for table rows */
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for table cells */
+table td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Hover effect for table rows */
+table tr:hover {
+    background-color: #ddd;
+}
+
+/* Add box shadow to table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
